@@ -1,0 +1,147 @@
+[ID] => 122
+            [post_author] => 1
+            [post_date] => 2016-08-29 19:43:58
+            [post_date_gmt] => 2016-08-29 23:43:58
+            [post_content] => Using analytical acumen with design research and human centric approach, strategy is a roadmap towards achieving an organization's goal. Strategy drives not only profits or marketshare, it drives innovation, organizational structures and products. 
+            [post_title] => Strategy
+            [post_excerpt] => 
+            [post_status] => publish
+            [comment_status] => closed
+            [ping_status] => closed
+            [post_password] => 
+            [post_name] => strategy
+            [to_ping] => 
+            [pinged] => 
+            [post_modified] => 2016-08-29 19:45:08
+            [post_modified_gmt] => 2016-08-29 23:45:08
+            [post_content_filtered] => 
+            [post_parent] => 124
+            [guid] => http://ec2-52-91-253-245.compute-1.amazonaws.com/?page_id=122
+            [menu_order] => 0
+            [post_type] => page
+            [post_mime_type] => 
+            [comment_count] => 0
+            [filter] => raw
+            
+
+            <!--img src="<?php echo(get_template_directory_uri()); ?>/images/horizontal_separator.png" /-->
+echo ('<h4>'.  $image['sizes']['medium']['url'] . '</h4>');
+/*Projects------------------*/
+
+#projects {
+    position: relative;
+}
+
+#content #projects li{
+    padding: 0;
+    background: none;       
+}
+
+#content .project.small {
+    height: auto;
+    display: block;
+    padding-bottom: 0;
+    cursor: pointer;
+    float: left;    
+    position: relative; 
+    background: #fff;
+    zoom: 1;
+    opacity: 1;     
+}
+
+#content .project.small img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+
+            //$image = wp_get_attachment_image_src( $attachment_id, 'medium' );
+                                            <!--img src="<?php echo ($image[0]); ?>" alt="<?php echo ('image-' . count($attachments) ); ?>" class="animation" data-animation="animation-fade-in-left" data-delay="400" /-->
+
+
+             <span class="color_13"> | </span>                                
+                                        <span style="color:#8DC35B;">
+                                            <?php 
+                                                //$strings = substr($description, strlen($strings) );
+                                                //echo( strstr($strings, $separator) ); 
+                                            ?>
+                                        </span>
+                                        <span class="color_13"> | </span>
+                                        <span style="color:#E8A805;">Strategist</span>
+<h1 style="line-height: 1.3em;" class="font_0">
+                                <span class="color_13">
+                                    <!--span style="font-family:droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;" -->
+                                        <span class="header-text">Al Labadi
+                                        </span>
+                                    <!--/span-->
+                                </span>
+                            </h1>
+
+                            
+<!--span class="color_13" -->
+                                    <!-- span style="font-family:droid-serif-w01-regular,droid-serif-w02-regular,droid-serif-w10-regular,serif;" -->
+                                        Crmelo
+                                    <!-- /span --><>
+                                <!--/span-->
+<span class="header-text">Carmelo
+                                        </span>
+
+                                    <h3><?php echo ($image['title']); ?></h3>
+sub-heading
+            style="letter-spacing: 8px;"
+
+            color:#BADA55;
+            class="wrap-container80-rs"
+
+            left: 625px; width: 40px; position: absolute; top: 100px; height: 7px;
+
+            left: 368px; width: 400px; position: absolute; top: 370px;
+
+            <?php echo ("<pre>" . var_dump($image) . "</pre>"); ?>
+<div class="img-hover-masked"></div>
+ <figure class="img-hover">
+                 </figure>
+
+class="fancybox" data-fancybox-group="images_gallery"
+            
+
+            $attachment = get_post( $attachment_id );
+            return array(
+            'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+            'caption' => $attachment->post_excerpt,
+            'description' => $attachment->post_content,
+            'href' => get_permalink( $attachment->ID ),
+            'src' => $attachment->guid,
+            'title' => $attachment->post_title
+
+
+
+background-color: rgba(99, 209, 214, 0.75);
+
+<img src="<?php echo ($image[0]); ?>" alt="<?php echo ('image-' . count($attachments) ); ?>" />
+
+
+               /*
+// echo ("<h1>  pages  " . $pages[$x]->post_title . "</h1>");
+        $attachments = array();
+        $attachments = get_children(
+            array(
+                'numberposts'      => 1,
+                'post_parent'      => $pages[$x]->ID,
+                'post_status'      => 'inherit',
+                'post_type'        => 'attachment',
+                'post_mime_type'   => 'image',
+                'order'            => 'DESC', 
+                'orderby'          => 'date', 
+                'fields'           => 'ids'
+                )
+            );
+                         <div class="labadi-team-text-logo">
+                            <img src="images/logo.png" alt="Logo" />
+                        </div>
+
+<a href="<?php echo( get_permalink( get_the_ID() ) ) ; ?>">
+
+
+<a href="<?php echo ($image['url']); ?>" class="fancybox" data-fancybox-group="images_gallery">

@@ -20,25 +20,31 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta description="<?php bloginfo( 'description' ); ?>" />
     <meta content-type="<?php bloginfo( 'html_type' ); ?>" />
-    <meta name="keywords" content="Design, Strategy, Interiors, Engineer, Technology, Sustainabiltiy, Experience, Karmel, Al Labadi, Labadi" />
-    <meta name="author" content="Karmel Al Labadi" />
+    <meta name="author" content="<?php bloginfo( 'name' )?>" />
+    <meta name="keywords" content="<?php bloginfo( 'description' )?>" />
 
-    <title> <?php bloginfo( 'name' ) . "|" . wp_title( '|', true, 'right' ); ?> </title>
-    <!--link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" /-->
-
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="canonical" href="<?php bloginfo( 'url' )?>"/>
+    <meta property="og:site_name" content="<?php bloginfo( 'name' )?>" />
+    <meta property="og:title" content="name='keywords' content='<?php bloginfo( 'description' ) ?>'" />
+    <meta property="og:url" content="<?php bloginfo( 'url' )?>" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    <meta itemprop="name" content="Portfolio"/>
+    <meta itemprop="url" content="<?php bloginfo( 'url' )?>" />
+    <meta itemprop="thumbnailUrl" content="" />
+    <link rel="image_src" href="" />
+    <meta itemprop="image" content=""/>
+    <meta name="twitter:title" content="<?php bloginfo( 'name' )?>" />
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content="<?php bloginfo( 'url' )?>" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="description" content="<?php bloginfo( 'description' )?>" />
+    <title> <?php bloginfo( 'name' ) . wp_title( '|', true, 'left' ); ?> </title>
     
     <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    
-    
-    <!-- Custom Colors -->
-    <!--<link rel="stylesheet" href="css/colors/green/color.css">-->
-    <!--<link rel="stylesheet" href="css/colors/orange/color.css">-->
-    <!--<link rel="stylesheet" href="css/colors/pink/color.css">-->
-    <!--<link rel="stylesheet" href="css/colors/purple/color.css">-->
-    <!--<link rel="stylesheet" href="css/colors/yellow/color.css">-->
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
         <script src="js/html5.js"></script>
         <script src="js/respond.min.js"></script>
@@ -48,7 +54,6 @@
         <link rel="stylesheet" href="css/ie-older.css">
     <![endif]-->    
     <?php wp_head(); ?>
-    
 </head>
 
 <body <?php body_class(); ?> >

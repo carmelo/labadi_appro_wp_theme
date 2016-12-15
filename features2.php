@@ -1,56 +1,122 @@
+    <?php
+/**
+ * The template for displaying a page with one image on the right, and intro to the left of it, then 
+ * lists all the other images in full screen 
+ *
+ * Displays the top part of the page
+ *
+ * @package WordPress
+ * @subpackage labadi_appro features2.php
+ * @since Labadi Appro 1.0
+ */
+
+      get_header(); ?>
         <!-- #features2 -->
         <div id="features2" class="bg-grey no-border-bottom padding-top80-rs">
-            
+            <?php while (have_posts()) : the_post(); ?>        
             <!-- .container -->
             <div class="container">
-                
+                <?php $attachments = get_children(
+                    array(
+                        'numberposts'      => 1,
+                        'post_parent'      => get_the_ID(),
+                        'post_status'      => 'inherit',
+                        'post_type'        => 'attachment',
+                        'post_mime_type'   => 'image',
+                        'order'            => 'DESC',
+                        'orderby'          => 'modified',
+                        'fields'           => 'ids'
+                        )
+                    );
+                    $caption = get_post_meta( get_the_ID(), $key = 'caption', $single = false );
+                    $credits = get_post_meta( get_the_ID(), $key = 'credits', $single = false );
+                    $context = get_post_meta( get_the_ID(), $key = 'context', $single = false );
+                    $year = get_post_meta( get_the_ID(), $key = 'year', $single = false );
+                    $month = get_post_meta( get_the_ID(), $key = 'month', $single = false );
+                ?>
                 <!-- .row -->
                 <div class="row">
+
                     <div class="col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-0">
-                        <div class="col-text120 margin-bottom20 animation" data-animation="animation-fade-in-left">
+                        <div class=" margin-bottom20 animation" data-animation="animation-fade-in-left">
                             <div class="post-heading-left">
-                                <h2>Design your <strong>Meeting</strong> time</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <h2><?php the_title(); ?></h2>
+                                <?php if (count($caption)) : ?>
+                                <p style="font-style:italic;">
+                                    <?php echo ( $caption[0] ); ?>  
+                                </p>  
+                                <?php 
+                                    endif; 
+                                    if ( (count($context)) || (count($month)) || (count($year)) ) :
+                                    ?>
+                                <p class="sub-heading">
+                                <?php   
+                                    for ($x = 0; $x < count($context); $x++) 
+                                    {
+                                        echo ( $context[$x] );   
+                                        echo ( '  ' );  
+                                    }
+                                    if (count($month)) 
+                                    { 
+                                        echo ( '  |  ' );
+                                        echo ( $month[0] . '  ');
+                                    }
+                                    if (count($year)) 
+                                    {
+                                        echo ( $year[0] );
+                                    }
+                                ?>  
+                                </p>
+                                <?php 
+                                    endif; 
+                                ?>
+                                <?php if (count($credits)) : ?>
+                                <p style="font-style:italic;">
+                                    A project with: 
+                                <?php   for ($x = 0; $x < count($credits); $x++) {
+                                            if ($x != 0) {
+                                                echo('<br /> - ');
+                                            }
+                                            echo ( $credits[$x] );   
+                                        }
+                                ?>  
+                                </p>  
+                                <?php endif; ?>  
                             </div>
-                            <p class="no-margin-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><strong>Consectetur adipisicing elit:</strong></p>
-                            <div class="list-row">
-                            	<div class="list-col">
-                                    <ul class="list-icon">
-                                    	<li><i class="ion ion-android-done"></i> Meeting time</li>
-                                        <li><i class="ion ion-android-done"></i> Invite people</li>
-                                        <li><i class="ion ion-android-done"></i> Share location</li>
-                                        <li><i class="ion ion-android-done"></i> Reminder</li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="list-col">
-                                    <ul class="list-icon">
-                                        <li><i class="ion ion-android-done"></i> Notification by email</li>
-                                        <li><i class="ion ion-android-done"></i> List of meeting materials</li>
-                                        <li><i class="ion ion-android-done"></i> Made very important</li>
-                                        <li><i class="ion ion-android-done"></i> Go out and take holiday</li>
-                                    </ul>
-                                </div>
+
+                            <div class="no-margin-bottom post-heading-left">
+                                <?php
+                                    /* translators: %s: Name of current post */
+                                    the_content();
+                                ?>
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-sm-8 col-md-5 col-sm-offset-2 col-md-offset-1 col-padding-xs">
-                        <figure class="img-overlay img-left-front">
-                            <div class="img-left">
-                                <img src="images/content/landing/feature-2-left.png" alt="Image Left" class="animation" data-animation="animation-fade-in-left" data-delay="400">
-                            </div>
-                            <div class="img-right">
-                                <img src="images/content/landing/feature-2-right.png" alt="Image Right" class="animation" data-animation="animation-fade-in-right">
+                      
+                        <figure class="img-overlay padding-bottom20"> 
+                            <div class="img-right" >
+                                <a href="<?php echo( get_permalink( get_the_ID() ) ); ?>" class="fancybox" data-fancybox-group="images_gallery">
+                                <?php
+                                    if ( !empty( $attachments ) ) :
+                                        $attachment_id = array_shift( $attachments );
+                                        if (wp_attachment_is_image($attachment_id) ):  
+                                            $image = wp_prepare_attachment_for_js($attachment_id);
+                                ?>
+                                    <img class="animation" data-animation="animation-fade-in-left" data-delay="400" src="<?php echo ($image['url']); ?>" alt="<?php echo ($image['title']); ?>" />
+                                
+                                <?php endif; 
+                                    endif; 
+                                ?>
+                                </a>
                             </div>
                         </figure>
                     </div>
-                    
                 </div>
-                <!-- .row end -->
-                
+                <!-- .row end --> 
             </div>
             <!-- .container end -->
-            
+            <?php endwhile; ?>
         </div>
         <!-- #features2 end -->
