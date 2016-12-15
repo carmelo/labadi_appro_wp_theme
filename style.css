@@ -12,9 +12,6 @@ License: http://labadipress.com/templates/appro_responsive_app_showcase_landing_
     
     <!-- Stylesheets -->
     @import url('css/bootstrap.min.css');
-    @import url('css/ionicons.min.css');
-    @import url('css/slick.css');
-    @import url('css/slick-theme.css');
     @import url('css/jquery.fancybox.css');
     @import url('css/animate.min.css');
     @import url('css/no-js.css');
@@ -1007,7 +1004,10 @@ button.close:hover {
     clear: left; } 
 .row {
     padding-left: 20px;
-    padding-right: 20px; }
+    padding-right: 20px; 
+    max-height: 340px;
+    overflow:hidden; 
+}
     .row .row {
       padding-left: 0;
       padding-right: 0; }
@@ -1079,8 +1079,7 @@ button.close:hover {
             transition: all 0.25s ease;
     width: 100%;
     height: auto; 
-    max-height: 340px;
-    overflow:hidden; }
+    }
   .project-card a:hover .cover, .project-card a:focus .cover { 
     opacity: 1; }
   .project-card a:hover img .project-card a:focus img  {

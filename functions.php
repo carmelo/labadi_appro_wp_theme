@@ -107,11 +107,7 @@ function labadi_css_enqueue() {
 
 	wp_enqueue_style( 'font1', esc_url('https://fonts.googleapis.com/css?family=Roboto:300,300,italic,400,500,700'), array(), '1.0', 'all');
 	wp_enqueue_style( 'font2', esc_url('https://fonts.googleapis.com/css?family=Montserrat:400,700'), array(), '1.0', 'all');
-
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0', 'all');
-    wp_enqueue_style( 'ionicons', get_template_directory_uri() . '/css/ionicons.min.css', array(), '1.0', 'all');
-    wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css', array(), '1.0', 'all');
-    wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/css/slick-theme.css', array(), '1.0', 'all');
     wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css', array(), '1.0', 'all');
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.min.css', array(), '1.0', 'all');
     wp_enqueue_style( 'style', get_stylesheet_uri() );
