@@ -1,12 +1,14 @@
 /*
-Theme Name: APPRO
+Theme Name: Labadi v2
 Description: A handrolled WordPress Twitter Bootstrap theme based on the tutorial at http://www.charityandbiscuits.com
 Version: 1.0
 Tags: responsive, bootstrap, Karmel Al Labadi, Design, Strategy
 
-License: http://labadipress.com/templates/appro_responsive_app_showcase_landing_page/docs/#php
+although heavily modified, originally purchased from appro - please review the license 
+@License: http://affapress.com/templates/appro_responsive_app_showcase_landing_page/docs/#php
 */
 /*
+    - transferred to appropriate files according to WP standards
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,500,700');
     @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
     
@@ -692,83 +694,6 @@ button.close:hover {
 	font-style:italic;
 }
 
-.labadi-form-contact {
-	position:relative;
-	width:600px;
-	text-align:center;
-	margin:0px auto;
-}
-	.labadi-form-contact .submit-status {
-		display:none;
-		position:absolute;
-		top:0px;
-		right:0px;
-		bottom:0px;
-		left:0px;
-		font-size:14px;
-		line-height:20px;
-		text-align:center;
-		font-weight:400;
-		background-color:rgba(255,255,255,.5);
-		z-index:400;
-	}
-	.ie .labadi-form-contact .submit-status { background:url(./images/ie-bg-submit-status.png) repeat top left; }
-		.labadi-form-contact .submit-status .submit-status-text {
-			position:absolute;
-			top:50%;
-			right:0px;
-			left:0px;
-			padding:0px 15px;
-			margin-top:-25px;
-		}
-		.labadi-form-contact .submit-status span {
-			display:inline-block;
-			background-color:#FFF;
-			padding:14px 15px;
-			border:1px solid #FFF;
-			border-radius:3px;
-		}
-		.labadi-form-contact .submit-status span.error {
-			color:#d86c6c;
-			background-color:#f6caca;
-			border-color:#e9b8b8;
-		}
-		.labadi-form-contact .submit-status span.success {
-			color:#529552;
-			background-color:#b9edb9;
-			border-color:#a5dda5;
-		}
-			.labadi-form-contact .submit-status span .ion { margin-right:5px; }
-	.labadi-form-contact input[type="text"], .labadi-form-contact input[type="email"], .labadi-form-contact textarea {
-		width:100%;
-		margin-bottom:20px;
-	}
-	.labadi-form-contact textarea {
-		height:140px;
-		margin-bottom:32px;
-	}
-	.labadi-form-contact input[type="text"].error, .labadi-form-contact input[type="email"].error, .labadi-form-contact textarea.error { border-color:#d43d3d; }
-	
-.sep-border {
-	overflow:hidden;
-	height:5px;
-	border-top:1px solid #f2f2f2;
-	box-shadow:inset 0px 3px 2px -1px rgba(0,0,0,.025);
-}
-.ie .sep-border {
-	height:auto;
-	border-top-width:2px;
-}
-.bg-color .sep-border, .bg-parallax .sep-border {
-	height:1px;
-	background-color:rgba(255,255,255,.4);
-	border:0px;
-	box-shadow:none;
-}
-.ie .bg-color .sep-border, .ie .bg-parallax .sep-border { background:url(./images/ie-bg-sep-border.png) repeat top left; }
-
-
-
 /* ========================= Preloader ========================= */
 
 #preloader {
@@ -1035,7 +960,7 @@ button.close:hover {
 
 .narrative {
     color:#000000;
-    font-size:20px;
+    font-size:14px;
     line-height:36px;
     margin:10px 10px 5px 10px; 
 }
@@ -1045,7 +970,7 @@ button.close:hover {
   .project-card a {
     display: block;
     position: relative;
-    overflow: hidden; }
+   }
   .project-card .cover {
     position: absolute;
     top: 0;
@@ -1053,10 +978,21 @@ button.close:hover {
     width: 100%;
     height: 100%;
     padding: 10px;
+    display: block;
     background-color: rgba(141, 195, 91, 0.75);
     -webkit-transition: opacity 0.25s ease;
             transition: opacity 0.25s ease;
     opacity: 0; }
+
+.project-card .desc {
+  text-align:left;
+  width:100%;
+  vertical-align:bottom;
+  padding:10px 10px;
+  font-size:12px;
+  color:#707070;
+  display:none;
+}
 
 .project-card .label {
   border-radius:0px;  !important!;
@@ -1446,7 +1382,15 @@ button.close:hover {
 	
 	.labadi-team-profile .labadi-team-profile-overlay { padding:20% 15px 0px; }   
     
+    .project-card a {
+        max-height:340px; 
+        overflow: hidden; 
+    }
+
     .project-card .label { display:none; }
+    .project-card .desc { display:none; }
+    .project-card .cover { display:inline-block; }
+    .project-card .narrative { display:inline-block; }
 	
 }
 
@@ -1578,13 +1522,7 @@ button.close:hover {
 	.labadi-team-profile .labadi-team-profile-overlay { padding:20% 15px 0px; }
 	
 	.labadi-client-logo { padding:0px 5px; }
-	
-	.tbl-pricing .tbl-prc-col .tbl-prc-base { padding:30px; }
-	.tbl-pricing .tbl-prc-col .tbl-prc-list {
-		padding:25px 0px 15px;
-		margin-top:25px;
-	}
-	.tbl-pricing .tbl-prc-col .tbl-prc-footer { margin-top:30px; }
+
 	/* iPad Landscape */
 	#content .project.small { margin-right: 2% !important; }
 
@@ -1594,7 +1532,15 @@ button.close:hover {
         column-count:         2;
     }
 
+    .project-card a {
+        max-height:340px; 
+        overflow: hidden; 
+    }
+    
     .project-card .label { display:none; }
+    .project-card .desc { display:none; }
+    .project-card .cover { display:inline-block; }
+    .project-card .narrative { display:inline-block; }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1749,19 +1695,21 @@ button.close:hover {
 	
 	.labadi-client-logo { padding:0px; }
 	
-	.tbl-pricing .tbl-prc-col .tbl-prc-base { padding:25px; }
-	.tbl-pricing .tbl-prc-col .tbl-prc-list {
-		padding:20px 0px 10px;
-		margin-top:20px;
-	}
-	.tbl-pricing .tbl-prc-col .tbl-prc-footer { margin-top:25px; }
-	
     #labadi-masonry {
         -moz-column-count:    2;
         -webkit-column-count: 2;
         column-count:         2;
     }
+
+    .project-card a {
+        max-height:340px; 
+        overflow: hidden; 
+    }
+
     .project-card .label { display:none; }
+    .project-card .desc { display:none; }
+    .project-card .cover { display:inline-block; }
+    .project-card .narrative { display:inline-block; }
 }
 
 @media (max-width: 767px) {
@@ -2040,7 +1988,15 @@ button.close:hover {
         -webkit-column-count: 1;
         column-count:         1;
     }
+
+    .project-card a {
+        max-height:100%; 
+    }
+    
     .project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 @media (max-width: 640px) {
@@ -2060,9 +2016,10 @@ button.close:hover {
         -webkit-column-count: 1;
         column-count:         1;
     }
-	.project-card .label {
-        display:inline-block;
-    }
+	.project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 @media (max-width: 540px) {
@@ -2074,9 +2031,10 @@ button.close:hover {
         -webkit-column-count: 2;
         column-count:         2;
     }
-	.project-card .label {
-        display:inline-block;
-    }
+	.project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 @media (max-width: 480px) {
@@ -2099,9 +2057,10 @@ button.close:hover {
         -webkit-column-count: 2;
         column-count:         2;
     }
-    .project-card .label {
-        display:inline-block;
-    }
+    .project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 /* iPhone Portrait */
@@ -2130,9 +2089,10 @@ button.close:hover {
         -webkit-column-count: 2;
         column-count:         2;
     }
-    .project-card .label {
-        display:inline-block;
-    }
+    .project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 @media (max-width: 400px) {
@@ -2165,21 +2125,15 @@ button.close:hover {
 	}
 	.labadi-client-logo { padding:0px 40px; }
 	
-	.tbl-pricing .tbl-prc-col .tbl-prc-base { padding:30px; }
-	.tbl-pricing .tbl-prc-col .tbl-prc-list {
-		padding:25px 0px 15px;
-		margin-top:25px;
-	}
-	.tbl-pricing .tbl-prc-col .tbl-prc-footer { margin-top:30px; }
-
     #labadi-masonry {
         -moz-column-count:    1;
         -webkit-column-count: 1;
         column-count:         1;
     }
-	.project-card .label {
-        display:inline-block;
-    }
+	.project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 @media (max-width: 340px) {
@@ -2191,9 +2145,10 @@ button.close:hover {
         -webkit-column-count: 1;
         column-count:         1;
     }
-	.project-card .label {
-        display:inline-block;
-    }
+	.project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 @media (max-width: 300px) {
@@ -2202,21 +2157,15 @@ button.close:hover {
 	
 	.labadi-client-logo { padding:0px; }
 	
-	.tbl-pricing .tbl-prc-col .tbl-prc-base { padding:25px; }
-	.tbl-pricing .tbl-prc-col .tbl-prc-list {
-		padding:20px 0px 10px;
-		margin-top:20px;
-	}
-	.tbl-pricing .tbl-prc-col .tbl-prc-footer { margin-top:25px; }
-
     #labadi-masonry {
         -moz-column-count:    1;
         -webkit-column-count: 1;
         column-count:         1;
     }
-	.project-card .label {
-        display:inline-block;
-    }
+	.project-card .label { display:inline-block; }
+    .project-card .desc { display:inline-block; }
+    .project-card .cover { display:none; }
+    .project-card .narrative { display:none; }
 }
 
 @media only screen and (min-width: 40.0625em) {
