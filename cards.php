@@ -60,7 +60,6 @@
                 </div>
                 
                 <img src="<?php echo ($image['url']); ?>" alt="<?php echo ($image['title']); ?>" />
-                <!--div class="img-hover-masked"></div-->
                 <div class="cover">
 					<h4><?php echo ($image['caption']); ?></h4>
                     <br />

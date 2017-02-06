@@ -92,27 +92,24 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <?php
+                        if ( !empty( $attachments ) ) :
+                            $attachment_id = array_shift( $attachments );
+                            if (wp_attachment_is_image($attachment_id) ):  
+                                $image = wp_prepare_attachment_for_js($attachment_id);
+                    ?>
                     <div class="col-sm-8 col-md-5 col-sm-offset-2 col-md-offset-1 col-padding-xs">
-                      
-                        <figure class="img-overlay padding-bottom20"> 
-                            <div class="img-right" >
-                                <a href="<?php echo( get_permalink( get_the_ID() ) ); ?>" class="fancybox" data-fancybox-group="images_gallery">
-                                <?php
-                                    if ( !empty( $attachments ) ) :
-                                        $attachment_id = array_shift( $attachments );
-                                        if (wp_attachment_is_image($attachment_id) ):  
-                                            $image = wp_prepare_attachment_for_js($attachment_id);
-                                ?>
+                        <a href="<?php echo ($image['sizes']['full']['url']); ?>" class="fancybox" data-fancybox-group="images_gallery">
+                            <figure class="img-overlay padding-bottom20 img-hover"> 
+                                <div class="img-right" >
                                     <img class="animation" data-animation="animation-fade-in-left" data-delay="400" src="<?php echo ($image['url']); ?>" alt="<?php echo ($image['title']); ?>" />
-                                
-                                <?php endif; 
-                                    endif; 
-                                ?>
-                                </a>
-                            </div>
-                        </figure>
+                                </div>
+                            </figure>
+                        </a>
                     </div>
+                    <?php endif; 
+                        endif; 
+                    ?>
                 </div>
                 <!-- .row end --> 
             </div>

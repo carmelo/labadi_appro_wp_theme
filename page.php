@@ -13,7 +13,6 @@
 <? // php get_sidebar(); ?>
     <!-- .stickem-container -->
     <div class="stickem-container">
-        <?php get_template_part( 'nav_menu' ); ?>
 
        <div id="preloader">
             <div class="spinner">

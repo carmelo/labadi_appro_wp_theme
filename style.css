@@ -988,8 +988,8 @@ button.close:hover {
   text-align:left;
   width:100%;
   vertical-align:bottom;
-  padding:10px 10px;
-  font-size:12px;
+  padding: 0px 20px 0px 20px;
+  font-size:16px;
   color:#707070;
   display:none;
 }
@@ -1003,7 +1003,7 @@ button.close:hover {
   vertical-align:bottom;
   background-color:#fff;
   padding:2px 5px;
-  font-size:12px;
+  font-size:14px;
   font-weight:700;
   color:#8DC35B;
   display:none;
@@ -1011,10 +1011,10 @@ button.close:hover {
 }
 
   .project-card img {
-    -webkit-transition: all 0.25s ease;
+        -webkit-transition: all 0.25s ease;
             transition: all 0.25s ease;
-    width: 100%;
-    height: auto; 
+        width: 100%;
+        max-height:340px; 
     }
   .project-card a:hover .cover, .project-card a:focus .cover { 
     opacity: 1; }
@@ -1887,7 +1887,7 @@ button.close:hover {
 		position:relative;
 		width:auto;
 		background-color:#8DC35B;
-		padding-bottom:00px;
+		padding-bottom:0px;
 		border-bottom:0px;
 		z-index:200;
 		-webkit-transition:none;
@@ -1990,6 +1990,7 @@ button.close:hover {
     }
 
     .project-card a {
+        padding:10px;
         max-height:100%; 
     }
     

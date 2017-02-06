@@ -9,8 +9,8 @@
     
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="description" content="Karmel is a technologist, environmentalist and problem solver" />
-    <meta name="keywords" content="Design, Strategy, Interiors, Engineer, Technology, Sustainabiltiy, Experience, Karmel, Al Labadi, Labadi" />
-    <meta name="author" content="Karmel Al Labadi" />
+    <meta name="keywords" content="Design, Strategy, Interiors, Engineer, Technology, Sustainabiltiy, Experience, Karmel, Labadi" />
+    <meta name="author" content="Karmel Labadi" />
 
     <title ><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />

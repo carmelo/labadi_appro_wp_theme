@@ -3,8 +3,8 @@
  * The template for displaying 404 pages (not found)
  *
  * @package WordPress
- * @subpackage labadi_appro
- * @since Labadi 1.0
+ * @subpackage labadi_appro 404.php
+ * @since Labadi 2.0
  */
 
 get_header(); ?>
@@ -12,15 +12,20 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
+			<section class="error-404 not-found" style="padding:100px;">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'labadi_appro' ); ?></h1>
+					<h2 class="page-title ">
+						<?php 
+							_e( "Olé! You are way ahead!<br /> I guess I am yet to create that project page...", 'labadi_appro' ); 
+						?>
+					</h2>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'labadi_appro' ); ?></p>
+					<p><?php _e( 'Perhaps this may help?', 'labadi_appro' ); ?></p>
 
-					<?php get_search_form(); ?>
+					<? //php get_search_form(); ?>
+					<?php wp_list_pages('title_li=<h4>' . __('This is how the site looks like...') . '</h4>' ); ?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
